@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Clock </title>
+    <script>
+        let a;
+        let date;
+        let time;
+        const options = {weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'};
+        setInterval(() => {
+            
+            a = new Date();
+            date = a.toLocaleDateString(undefined,options);
+            time = a.getHours() + ':' + a.getMinutes() + ':'+ a.getSeconds();
+            document.getElementById("time").innerHTML = time + " <br> on " + date;
+        }, 1000);
+            </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: rgb(241, 204, 159);
+        }
+
+        aside {
+            background-color: rgb(241, 204, 159);
+        }
+
+        ul {
+            display: inline-flex;
+        }
+
+        ul li {
+            list-style-type: none;
+            margin: 0 13px;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+        }
+
+        form button {
+            background: rgb(224, 220, 221);
+            padding: 5px 5px;
+            border-radius: 4px;
+            letter-spacing: 1px;
+        }
+
+        form input {
+            padding: 5px 5px;
+            border-radius: 4px;
+        }
+
+        form .fa-magnifying-glass {
+            align-self: center;
+        }
+
+        #countries {
+            border: 2px solid black;
+            border-radius: 4px;
+        }
+        .containerX {
+            padding-left: 15px;
+            
+            position: absolute;
+            transform: translate(-50%,-50%);
+            top: 30%;
+            left: 50%;
+           
+        /* boalign-content: center; */
+            width: 500px;
+            height: 100px;
+            border: 2px solid grey;
+
+        }
+    </style>
+    <script src="https://kit.fontawesome.com/047210d7b5.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><b>Home</b></li>
+                <li><b>Links</b></li>
+                <form>
+                    <select name="Dropdown">
+                        <option><a href="https://google.com"></a>Select by Country Area</option>
+                        <option><a href="https://webcric.com/"></a>Eastern Countries</option>
+                        <option><a href="www.bing.com"></a>Middle Eastern Countries</option>
+                        <option>Western Countries</option>
+                        <p></p>
+                    </select>
+                </form>
+                <li><b>About Us</b></li>
+            </ul>
+        </nav>
+    </header>
+    <aside>
+        <div class="container">
+        <form>
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" placeholder="what are you looking for?">
+                <button>Search</button>
+            </form>
+        </div>
+    </aside>
+
+      <div class="containerX">
+        <div class="box">
+        <h1> Current time is : <span id="time"></span> </h1>
+        <p><b>We are here to show the time for different countries</b></p>
+    </div>
+      </div>
+</body>
+
+</html>
